@@ -1,8 +1,7 @@
-const express = require('express'),
-  path = require('path')
-const dotenv = require('dotenv'),
-  { Client } = require('pg')
-
+const express = require('express')
+const path = require('path')
+const dotenv = require('dotenv')
+const { Client } = require('pg')
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -15,12 +14,12 @@ const client = new Client({
 client.connect()
 
 app.get('/api', async (_request, response) => {
-  const { rows } = await client.query('SELECT * FROM christmasMarket')
+  const { rows } = await client.query('SELECT * FROM christmasmarket')
   response.send(rows)
 })
 
 app.use(express.static(path.join(path.resolve(), 'dist')))
 
 app.listen(port, () => {
-  console.log('Redo på http://localhost:{port}/')
+  console.log(`Redo på http://localhost:${port}/`)
 })
