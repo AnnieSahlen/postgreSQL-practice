@@ -1,0 +1,14 @@
+CREATE TABLE christmasMarket(
+christmasMarketId serial PRIMARY KEY,
+christmasMarketName text UNIQUE NOT NULL,
+christmasMarketLocation text,
+christmasMarketDate INTEGER
+);
+
+INSERT INTO christmasMarket (christmasMarketName, christmasMarketLocation, christmasMarketDate) VALUES ('Christmas in Haga', 'Haga Nygata', 241130);
+
+INSERT INTO christmasMarket (christmasMarketName, christmasMarketLocation, christmasMarketDate) VALUES ('a la London Christmas Design Market', 'Auktionsverket Kulturarena', 241122);
+
+INSERT INTO christmasMarket (christmasMarketName, christmasMarketLocation, christmasMarketDate) VALUES ('Kronhusjul', 'Kronhuset', 241129);
+
+SELECT * FROM christmasMarket;
